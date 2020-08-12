@@ -69,7 +69,7 @@ Thanks to the following people who have contributed to this project: **TEAM 7 AD
 * Jacques Carstens | carstensjacques3@gmail.com
 * 
 * 
-* 
+* Simangele Maphanga | Simangeleinno@gmail.com
 
 
 ## License
