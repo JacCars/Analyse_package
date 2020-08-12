@@ -1,1 +1,1 @@
-from . import Analyse_module
+from Analyse_package.Analyse_module import *
