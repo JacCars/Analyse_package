@@ -67,7 +67,7 @@ Thanks to the following people who have contributed to this project: **TEAM 7 AD
 
 * 
 * Jacques Carstens | carstensjacques3@gmail.com
-* 
+* Katleho Mokhele  | katleho@southatlantic.net
 * 
 * 
 
