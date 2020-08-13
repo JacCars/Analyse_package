@@ -172,9 +172,9 @@ def extract_municipality_hashtags(df):
     df['municipality'] = municipality_list
     df['hashtags'] = hashtags_list
     df['municipality'] = df['municipality'].map(lambda word: np.nan
-                                                if word == '[]' else word)
+                                                if word == [] else word)
     df['hashtags'] = df['hashtags'].map(lambda word: np.nan
-                                        if word == '[]' else word)
+                                        if word == [] else word)
 
     return df
 
