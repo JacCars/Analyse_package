@@ -141,42 +141,50 @@ def extract_municipality_hashtags(df):
 
     """Return input pandas DataFrame with two new columns('municipality' and
       'hashtags').
+
     Args:
         df (pandas(pd) DataFrame): pd.DataFrame object with at least one column:
             'Tweets': Contains strings (pd.Series objects) of individual tweets
              (one tweet per value).
+
     Return input pandas DataFrame with two new columns:
         'municipality': Contains name of municipality (lowercase) if present in
         'Tweet' column (else NaN value).
         'hashtags': Contains hashtags (if present - lowercase) from 'Tweets'
          column (else NaN vlaue).
     """
+    try:
+        municipality_list = []
+        hashtags_list = []
 
-    municipality_list = []
-    hashtags_list = []
+        for index, row in df.iterrows():
+            split_tweets = row['Tweets'].split()
+            row_mun_list = []
+            row_hasht_list = []
+            for word in split_tweets:
+                if word in mun_dict:
+                    row_mun_list.append(word.lower())
+                elif word[0] == '#':
+                    row_hasht_list.append(word.lower())
+                else:
+                    pass
+            municipality_list.append(row_mun_list)
+            hashtags_list.append(row_hasht_list)
 
-    for index, row in df.iterrows():
-        split_tweets = row['Tweets'].split()
-        row_mun_list = []
-        row_hasht_list = []
-        for word in split_tweets:
-            if word in mun_dict:
-                row_mun_list.append(word.lower())
-            elif word[0] == '#':
-                row_hasht_list.append(word.lower())
-            else:
-                pass
-        municipality_list.append(row_mun_list)
-        hashtags_list.append(row_hasht_list)
+        df['municipality'] = municipality_list
+        df['hashtags'] = hashtags_list
+        df['municipality'] = df['municipality'].map(lambda word: np.nan
+                                                    if word == [] else word)
+        df['hashtags'] = df['hashtags'].map(lambda word: np.nan
+                                            if word == [] else word)
 
-    df['municipality'] = municipality_list
-    df['hashtags'] = hashtags_list
-    df['municipality'] = df['municipality'].map(lambda word: np.nan
-                                                if word == [] else word)
-    df['hashtags'] = df['hashtags'].map(lambda word: np.nan
-                                        if word == [] else word)
-
-    return df
+        return df
+    except AttributeError:
+        print('AttributeError raised, only pd.DataFrame objects allowed as input')
+    except TypeError:
+        print("TypeError raised, input df must contain a 'Tweets' and 'Date' column")
+    except KeyError:
+        print("KeyError raised, input df must contain a 'Tweets' and 'Date' column")
 
 # Function 5:
 
@@ -184,22 +192,28 @@ def number_of_tweets_per_day(df):
 
     """Return new pd.DataFrame object with 'Date' as index column
         and 'Tweets' as column.
+
     Args:
         df (pandas(pd) DataFrame): pd.DataFrame object with at least two columns:
             'Tweets': Contains strings (pd.Series objects) of individual tweets
              (one tweet per value).
             'Date': Column of DateTime objects stating DateTime of corresponding
              tweet.
+
     Return new pandas DataFrame with two new columns:
         'Tweets': Count of tweets per 'Date', from DataFrame.groupby().count().
         'Date' (index column): Column of truncated DateTime objects in
             'yyyy-mm-dd' format.
     """
-
-    date = [item.split(" ")[0] for item in df['Date'].values]
-    df['Date'] = date
-    df1 = df.groupby(df['Date']).count()
-    return df1
+    try:
+        date = [item.split(" ")[0] for item in df['Date'].values]
+        df['Date'] = date
+        df1 = df.groupby(df['Date']).count()
+        return df1
+    except TypeError:
+        print('AttributeError raised, only pd.DataFrame objects allowed as input')
+    except KeyError:
+        print("KeyError raised, input df must contain a 'Tweets' and 'Date' column")
 
 # Function 6:
 
