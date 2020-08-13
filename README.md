@@ -35,26 +35,37 @@ pip install git+https://github.com/JacCars/Analyse_package
 ## Using Analyse_package
 
 To use Analyse_package, follow these steps:
-
 ```
 import Analyse_package as team7
 ```
-
 Function 1: dictionary_of_metrics
-
+```
+team7.dictionary_of_metrics(<your_input_list>)
+```
 Function 2: five_num_summary
-
+```
+team7.five_num_summary(<your_input_list>)
+```
 Function 3: date_parser
-
+```
+team7.date_parser(<your_input_list>)
+```
 Function 4: extract_municipality_hashtags
-
+```
+team7.extract_municipality_hashtags(<your_input_dataframe>)
+```
 Function 5: number_of_tweets_per_day
-
+```
+team7.number_of_tweets_per_day(<your_input_dataframe>)
+```
 Function 6: word_splitter
-
+```
+team7.extract_municipality_hashtags(<your_input_dataframe>)
+```
 Function 7: stop_words_remover
-Note: See docstring for function specifics.
-
+```
+team7.stop_words_remover(<your_input_dataframe>)
+```
 ## Contributing to Analyse_package
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
 No external contributors necessary. This is a limited package with no future updates planned.
