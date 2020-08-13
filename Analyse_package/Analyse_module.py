@@ -49,17 +49,6 @@ stop_words_dict = {
 }
 
 
-"""
-To do:
-- Hide .egg-info from package (.gitignore)
-- Add error handling code (if time)
-- Docstring (1-5 done)
-- Complete test.py assertions/tests
-- Complete if __init_ == __main__...
-- Populate readme with your function (use same format as F4/5)
-"""
-
-
 # Function 1:
 
 def dictionary_of_metrics(items):
@@ -126,8 +115,7 @@ def date_parser(dates):
             each value in the (DateTime) format 'yyyy-mm-dd hh:mm:ss'.
     
     Return:
-        list: List of strings in truncated DateTime format ('yyyy-mm-dd').
-    
+
     Example:
         Input: date_parser(['2019-11-29 12:50:54', '2019-11-29 12:46:53', '2019-11-29 12:46:10'])
         Output: ['2019-11-29', '2019-11-29', '2019-11-29']
