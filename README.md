@@ -76,11 +76,11 @@ See https://help.github.com for further reading on GitHub.
 
 Thanks to the following people who have contributed to this project:
 
-* 
-* Jacques Carstens   | carstensjacques3@gmail.com
-* Katleho Mokhele    | katleho@southatlantic.net
-* Maria Rakau        | mariarakau@gmail.com
-* Simangele Maphanga | Simangeleinno@gmail.com
+* Bukelwa Mqhamane		| mabum7@gmail.com	
+* Jacques Carstens		| carstensjacques3@gmail.com
+* Katleho Mokhele		| katleho@southatlantic.net
+* Maria Rakau			| mariarakau@gmail.com
+* Simangele Maphanga	| Simangeleinno@gmail.com
 
 
 ## License
