@@ -8,7 +8,7 @@ setup(
     description='EDSA July 2020 JHB team 7 Sprint Analyse package',
     long_description=open('README.md').read(),
     install_requires=['numpy','pandas'],
-    url='https://github.com/<username>/<package-name>',
+    url='https://github.com/JacCars/Analyse_package',
     author='See readme file',
     author_email='See readme file'
 )
