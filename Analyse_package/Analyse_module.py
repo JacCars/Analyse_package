@@ -206,8 +206,8 @@ def number_of_tweets_per_day(df):
 # Function 6:
 
 def word_splitter(df):
-    """
-    returns pandas DataFrame with a new column 'Split Tweets' that contains tweets as list of seperate words.
+    """returns pandas DataFrame with a new column 'Split Tweets' that contains
+        tweets as list of seperate words.
     
     Args:
         df (pandas(pd) DataFrame): pd.DataFrame object with atleast one column:
@@ -223,57 +223,28 @@ def word_splitter(df):
 # Function 7:
 
 def stop_words_remover(df):
-    """
-    returns a pandas DataFrame with a new column ''Without Stop Words' that contains a list of tweeted words withoutout english stop words.
+    """returns a pandas DataFrame with a new column ''Without Stop Words' that
+        contains a list of tweeted words withoutout english stop words.
     
     Args:
         df(pandas(pd) DataFrame): pd.DataFrame object with atleast one column:
         'Tweets': Contains strings (pd.Series objects) of individual tweets (one tweet per value).
+
     Returns:
             new pandas DataFrame with a new column:
             'Without Stop Words': Alist of separate words without stop words from stop_words_dict.
     """
-    # your code here
-    stop_words_dict = {
-        'stopwords':[
-            'where', 'done', 'if', 'before', 'll', 'very', 'keep', 'something', 'nothing', 'thereupon', 
-            'may', 'why', 'â€™s', 'therefore', 'you', 'with', 'towards', 'make', 'really', 'few', 'former', 
-            'during', 'mine', 'do', 'would', 'of', 'off', 'six', 'yourself', 'becoming', 'through', 
-            'seeming', 'hence', 'us', 'anywhere', 'regarding', 'whole', 'down', 'seem', 'whereas', 'to', 
-            'their', 'various', 'thereafter', 'â€˜d', 'above', 'put', 'sometime', 'moreover', 'whoever', 'although', 
-            'at', 'four', 'each', 'among', 'whatever', 'any', 'anyhow', 'herein', 'become', 'last', 'between', 'still', 
-            'was', 'almost', 'twelve', 'used', 'who', 'go', 'not', 'enough', 'well', 'â€™ve', 'might', 'see', 'whose', 
-            'everywhere', 'yourselves', 'across', 'myself', 'further', 'did', 'then', 'is', 'except', 'up', 'take', 
-            'became', 'however', 'many', 'thence', 'onto', 'â€˜m', 'my', 'own', 'must', 'wherein', 'elsewhere', 'behind', 
-            'becomes', 'alone', 'due', 'being', 'neither', 'a', 'over', 'beside', 'fifteen', 'meanwhile', 'upon', 'next', 
-            'forty', 'what', 'less', 'and', 'please', 'toward', 'about', 'below', 'hereafter', 'whether', 'yet', 'nor', 
-            'against', 'whereupon', 'top', 'first', 'three', 'show', 'per', 'five', 'two', 'ourselves', 'whenever', 
-            'get', 'thereby', 'noone', 'had', 'now', 'everyone', 'everything', 'nowhere', 'ca', 'though', 'least', 
-            'so', 'both', 'otherwise', 'whereby', 'unless', 'somewhere', 'give', 'formerly', 'â€™d', 'under', 
-            'while', 'empty', 'doing', 'besides', 'thus', 'this', 'anyone', 'its', 'after', 'bottom', 'call', 
-            'nâ€™t', 'name', 'even', 'eleven', 'by', 'from', 'when', 'or', 'anyway', 'how', 'the', 'all', 
-            'much', 'another', 'since', 'hundred', 'serious', 'â€˜ve', 'ever', 'out', 'full', 'themselves', 
-            'been', 'in', "'d", 'wherever', 'part', 'someone', 'therein', 'can', 'seemed', 'hereby', 'others', 
-            "'s", "'re", 'most', 'one', "n't", 'into', 'some', 'will', 'these', 'twenty', 'here', 'as', 'nobody', 
-            'also', 'along', 'than', 'anything', 'he', 'there', 'does', 'we', 'â€™ll', 'latterly', 'are', 'ten', 
-            'hers', 'should', 'they', 'â€˜s', 'either', 'am', 'be', 'perhaps', 'â€™re', 'only', 'namely', 'sixty', 
-            'made', "'m", 'always', 'those', 'have', 'again', 'her', 'once', 'ours', 'herself', 'else', 'has', 'nine', 
-            'more', 'sometimes', 'your', 'yours', 'that', 'around', 'his', 'indeed', 'mostly', 'cannot', 'â€˜ll', 'too', 
-            'seems', 'â€™m', 'himself', 'latter', 'whither', 'amount', 'other', 'nevertheless', 'whom', 'for', 'somehow', 
-            'beforehand', 'just', 'an', 'beyond', 'amongst', 'none', "'ve", 'say', 'via', 'but', 'often', 're', 'our', 
-            'because', 'rather', 'using', 'without', 'throughout', 'on', 'she', 'never', 'eight', 'no', 'hereupon', 
-            'them', 'whereafter', 'quite', 'which', 'move', 'thru', 'until', 'afterwards', 'fifty', 'i', 'itself', 'nâ€˜t',
-            'him', 'could', 'front', 'within', 'â€˜re', 'back', 'such', 'already', 'several', 'side', 'whence', 'me', 
-            'same', 'were', 'it', 'every', 'third', 'together'
-            ]
-        }
-    def my_remove(tweet):
-        tweet = tweet.lower().split()
-        for stop_word in stop_words_dict['stopwords']:
-            if stop_word in tweet:
-                tweet.remove(stop_word)
-        return tweet
+    Without_stopwords_list = []
     
-    df['Without Stop Words'] = df['Tweets'].apply(my_remove, stop_words_dict)
-    
+    for index, row in df.iterrows():
+        split_tweets = row['Tweets'].split()
+        row_temp_list = []
+        split_tweets_lowercase = list(map(lambda word: word.lower(), split_tweets))
+        for word in split_tweets_lowercase:
+            if word not in stop_words_dict['stopwords']:
+                row_temp_list.append(word)
+            else:
+                pass
+        Without_stopwords_list.append(row_temp_list)
+    df['Without Stop Words'] = Without_stopwords_list
     return df
