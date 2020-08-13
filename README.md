@@ -66,9 +66,9 @@ See https://help.github.com for further reading on GitHub.
 Thanks to the following people who have contributed to this project: **TEAM 7 ADD YOUR NAME ALPHABETICALLY**
 
 * 
-* Jacques Carstens | carstensjacques3@gmail.com
-* Katleho Mokhele  | katleho@southatlantic.net
-* Maria Rakau      | mariarakau@gmail.com
+* Jacques Carstens   | carstensjacques3@gmail.com
+* Katleho Mokhele    | katleho@southatlantic.net
+* Maria Rakau        | mariarakau@gmail.com
 * Simangele Maphanga | Simangeleinno@gmail.com
 
 
