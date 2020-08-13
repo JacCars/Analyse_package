@@ -29,7 +29,7 @@ Read more about the anaocnda project at https://www.anaconda.com/
 Alternatively a simpler install using pip:
 
 ```
-pip install git+https://github.com/bmqhamane/team_7_analyse_eskom_package.git
+pip install git+https://github.com/JacCars/Analyse_package
 ```
 
 ## Using Analyse_package
