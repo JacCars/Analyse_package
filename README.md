@@ -1,4 +1,4 @@
-# EDSA Sprint: Analyse - Analyse_package.py
+# EDSA Sprint: Analyse - Analyse_package
 
 ## Introduction
 
@@ -74,7 +74,7 @@ See https://help.github.com for further reading on GitHub.
 
 ## Contributors
 
-Thanks to the following people who have contributed to this project: **TEAM 7 ADD YOUR NAME ALPHABETICALLY**
+Thanks to the following people who have contributed to this project:
 
 * 
 * Jacques Carstens   | carstensjacques3@gmail.com
