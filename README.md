@@ -37,7 +37,7 @@ pip install git+https://github.com/JacCars/Analyse_package
 To use Analyse_package, follow these steps:
 
 ```
-from Analyse_package import <name>
+import Analyse_package as team7
 ```
 
 Function 1: dictionary_of_metrics
