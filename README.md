@@ -1,8 +1,8 @@
-# EDSA Sprint: Analyse - 7functions.py
+# EDSA Sprint: Analyse - Analyse_package.py
 
 ## Introduction
 
-7functions is a small Python package that allows one to do 7 basic data analyses on lists (functions 1-3)
+Analyse_package is a small Python package that allows one to do 7 basic data analyses on lists (functions 1-3)
 and pandas.DataFrame structured twitter data (fucntions 4-7). Each analysis/function has specific 
 input/output as seen in their respective dosctrings.
 
@@ -19,9 +19,9 @@ Before you begin, ensure you have met the following requirements:
 	* https://numpy.org/
 	* https://pandas.pydata.org/
 
-## Installing 7functions
+## Installing Analyse_package
 
-To install 7functions, follow these steps:
+To install Analyse_package, follow these steps:
 
 We reccomend installing this package with conda (from anaconda). 
 Read more about the anaocnda project at https://www.anaconda.com/
@@ -29,15 +29,15 @@ Read more about the anaocnda project at https://www.anaconda.com/
 Alternatively a simpler install using pip:
 
 ```
-pip install git+https://github.com/bmqhamane/team_7_analyse_eskom_package.git
+pip install git+https://github.com/JacCars/Analyse_package
 ```
 
-## Using 7functions
+## Using Analyse_package
 
-To use 7functions, follow these steps:
+To use Analyse_package, follow these steps:
 
 ```
-from 7functions import <name>
+from Analyse_package import <name>
 ```
 
 Function 1: dictionary_of_metrics
@@ -55,7 +55,7 @@ Function 6: word_splitter
 Function 7: stop_words_remover
 Note: See docstring for function specifics.
 
-## Contributing to 7functions
+## Contributing to Analyse_package
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
 No external contributors necessary. This is a limited package with no future updates planned.
 
